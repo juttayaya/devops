@@ -1,0 +1,3 @@
+#127.0.0.1
+## Sample connection to Oracle Dev Days VirtualBox
+#10.0.0.9 ansible_user=oracle

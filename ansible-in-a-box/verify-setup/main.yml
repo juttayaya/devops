@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+  - name: "Hello World"
+    shell: "echo 'Hello World'"
+    register: echoVar
+
+  - name: "Print Hello World Variable"
+    debug:
+      msg: "{{ echoVar }}"
+
+  - name: "Print Hello World stdout"
+    debug:
+      msg: "echoVar.stdout : {{ echoVar.stdout }}"
+
+  - name: "Print system info for remote servers"
+    debug:
+      msg: "Hostname: {{ ansible_hostname }},CPU: {{ ansible_processor[0] }} {{ ansible_processor[1] }},Memory: {{ ansible_memtotal_mb }} M"
