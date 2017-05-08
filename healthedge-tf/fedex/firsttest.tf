@@ -3,7 +3,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "he-fedex" {
-  ami = "ami-2d39803a"
+  ami = "ami-6d1c2007"
   instance_type = "t2.micro"
+
+  tags {
+    Name = "healthedge-centos7"
+  }
 }
 
