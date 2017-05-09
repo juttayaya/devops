@@ -7,22 +7,6 @@ variable "ami_id" {
   default = "ami-0a41351c"
 }
 
-resource "aws_instance" "he-fedex" {
-  ami = "${var.ami_id}"
-  instance_type = "t2.micro"
-  vpc_security_group_ids = ["${aws_security_group.he-sg.id}"]
-  key_name = "he-keypair"
-
-  tags {
-    Name = "he-centos7"
-  }
-
-  lifecycle {
-    create_before_destroy = true
-  }
-
-}
-
 resource "aws_security_group" "he-sg" {
   name = "he-centos7-sg"
 
@@ -37,5 +21,39 @@ resource "aws_security_group" "he-sg" {
     create_before_destroy = true
   }
 }
+
+## VM definition
+resource "aws_instance" "connector01" {
+  ami = "${var.ami_id}"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = ["${aws_security_group.he-sg.id}"]
+  key_name = "he-keypair"
+
+  tags {
+    Name = "connector01"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+}
+
+resource "aws_instance" "connector02" {
+  ami = "${var.ami_id}"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = ["${aws_security_group.he-sg.id}"]
+  key_name = "he-keypair"
+
+  tags {
+    Name = "connector02"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+}
+
 
 
