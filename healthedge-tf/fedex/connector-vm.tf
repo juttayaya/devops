@@ -55,5 +55,12 @@ resource "aws_instance" "connector02" {
 
 }
 
+output "connector01_ip" {
+  value = "${aws_instance.connector01.public_ip}"
+}
+
+output "connector02_ip" {
+  value = "${aws_instance.connector02.public_ip}"
+}
 
 
