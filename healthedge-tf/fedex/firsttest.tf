@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "he-fedex" {
-  ami = "ami-6d1c2007"
+  ami = "ami-5850244e"
   instance_type = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.he-sg.id}"]
   key_name = "he-keypair"
