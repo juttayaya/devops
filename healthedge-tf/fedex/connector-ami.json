@@ -1,5 +1,6 @@
 {
   "variables": {
+    "connector_user": "connector",
     "connector_ssh_dir": "/home/connector/.ssh"
   },
   "builders": [{
@@ -15,12 +16,11 @@
       "type": "shell",
       "inline": [
         "sleep 60",
-        "sudo useradd connector",
-        "sudo mkdir -p {{user `connector_ssh_dir`}}",
-        "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5CqZtb+Z+xSVJXBdfHm8O9QyRMQnV9MD41mRmF7k3wFYR4x2P0Id/kQ86ydzE3uznFMQSjWEeqWp4BsS1No/OTlNrabBx8Tjn5Xfgi0SBbZgXrRQ7H1x2ENO5vYaB4MWwUCaW7d2N1tg3snaLXHqqEuScwUaaoqfK8so2rdjTnhJ0sB1rSrzupEM/S+AvBYNPXi4PGcS9vZXLxUaOKiaCJnvnJcAXtpalmeL2I+5v6u0OnrADLxNmSlbk5rXWbdzQ+8WKAXLgdTuEpSLg/gQTftU1bMaw5j2Rd6UY9xr11UPfWMT81/ESTx39cm9h1zqSLKjySukS8lOTb5CBdkel jenkins@ansible-ctrl' | sudo tee {{user `connector_ssh_dir`}}/authorized_keys > /dev/null",
-        "sudo chown -R connector. {{user `connector_ssh_dir`}}",
-        "sudo chmod 700 {{user `connector_ssh_dir`}}",
-        "sudo chmod 600 {{user `connector_ssh_dir`}}"
+        "sudo useradd {{user `connector_user`}}",
+        "sudo {{user `connector_user`}} mkdir -p {{user `connector_ssh_dir`}}",
+        "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5CqZtb+Z+xSVJXBdfHm8O9QyRMQnV9MD41mRmF7k3wFYR4x2P0Id/kQ86ydzE3uznFMQSjWEeqWp4BsS1No/OTlNrabBx8Tjn5Xfgi0SBbZgXrRQ7H1x2ENO5vYaB4MWwUCaW7d2N1tg3snaLXHqqEuScwUaaoqfK8so2rdjTnhJ0sB1rSrzupEM/S+AvBYNPXi4PGcS9vZXLxUaOKiaCJnvnJcAXtpalmeL2I+5v6u0OnrADLxNmSlbk5rXWbdzQ+8WKAXLgdTuEpSLg/gQTftU1bMaw5j2Rd6UY9xr11UPfWMT81/ESTx39cm9h1zqSLKjySukS8lOTb5CBdkel jenkins@ansible-ctrl' | sudo {{user `connector_user`}} tee {{user `connector_ssh_dir`}}/authorized_keys > /dev/null",
+        "sudo connector chmod 700 {{user `connector_ssh_dir`}}",
+        "sudo connector chmod 600 {{user `connector_ssh_dir`}}/authorized_keys"
       ]
     }]
 }
