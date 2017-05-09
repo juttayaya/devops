@@ -8,6 +8,7 @@
     "source_ami": "ami-6d1c2007",
     "instance_type": "t2.micro",
     "ssh_username": "centos",
+    "ssh_pty": true,
     "ami_name": "connector-ami"
   }],
   "provisioners": [{
