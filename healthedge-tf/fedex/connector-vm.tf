@@ -4,7 +4,7 @@ provider "aws" {
 
 variable "ami_id" {
   description = "AMI ID to use to build Connector VM"
-  default = "ami-0a41351c"
+  default = "ami-f64f3be0"
 }
 
 resource "aws_security_group" "he-sg" {
