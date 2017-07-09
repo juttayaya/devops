@@ -1,12 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket = "terraform-s3-tfstate-example"
-    region = "us-east-1"
-    key = "example/s3-tfstate/terraform.tfstate"
-    encrypt = true
-  }
-}
-
 provider "aws" {
   region = "us-east-1"
 }
