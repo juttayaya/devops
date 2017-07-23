@@ -1,0 +1,60 @@
+{
+  "description": "Netflix Eureka Server",
+  "variables": {
+    "aws_ami": "ami-8a7859ef",
+    "aws_region": "us-east-2",
+    "local_repo_dir": "repo",
+    "remote_repo_dir": "/tmp/repo"
+  },
+  "builders": [{
+    "name": "eureka-server-aws-ami",
+    "type": "amazon-ebs",
+    "source_ami": "{{user `aws_ami`}}",
+    "region": "{{user `aws_region`}}",
+    "instance_type": "t2.micro",
+    "ami_name": "eureka-server-ami",
+    "ami_description": "Netflix Eureka Server AMI",
+    "ami_virtualization_type": "hvm",
+    "associate_public_ip_address": true,
+    "disable_stop_instance": false,
+    "ebs_optimized": false,
+    "force_deregister": true,
+    "force_delete_snapshot": true,
+    "communicator": "ssh",
+    "ssh_username": "ec2-user",
+    "ssh_pty": "false",
+    "launch_block_device_mappings": [
+    {
+      "device_name": "/dev/xvda",
+      "volume_size": 20,
+      "volume_type": "gp2",
+      "encrypted": false,
+      "delete_on_termination": true
+    }
+    ],
+    "tags": {
+      "Name": "Eureka Server AMI",
+      "Org": "jirawat.com"
+    }
+  }],
+  "provisioners": [
+  {
+    "type": "shell",
+    "pause_before": "60s",
+    "inline": [
+      "sleep 60",
+      "mkdir -p {{user `remote_repo_dir`}}"
+    ]
+  },
+  {
+    "type": "file",
+    "source": "{{user `local_repo_dir`}}",
+    "destination": "{{user `remote_repo_dir`}}"
+  }
+  ],
+  "post-processors": [{
+    "type": "manifest",
+    "output": "eureka-server-packer-manifest.json",
+    "strip_path": false
+  }]
+}
