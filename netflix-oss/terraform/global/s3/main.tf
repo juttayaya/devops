@@ -30,3 +30,22 @@ resource "aws_s3_bucket" "netflix-oss-tfstate" {
       Project = "Netflix OSS"
     }      
 }
+
+resource "aws_s3_bucket" "kubectl-io-state-store" {
+    bucket = "kubectl-io-state-store"
+    acl = "private"
+
+    versioning {
+      enabled = false
+    }
+
+    lifecycle {
+      prevent_destroy = true
+    }
+
+    tags {
+      Name = "Kubernetes State for kubectl.io"
+      Org = "jirawat.com"
+      Project = "kubectl.io"
+    }      
+}
