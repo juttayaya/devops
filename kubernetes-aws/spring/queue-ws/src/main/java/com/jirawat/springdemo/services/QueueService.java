@@ -4,18 +4,37 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.hateoas.ResourceSupport;
 
+import java.util.Date;
+
 /**
  * @author juttayaya
  */
 public class QueueService extends ResourceSupport {
-    private final String serverInfo;
+    @JsonProperty("hostName")
+    private final String hostName;
+
+    @JsonProperty("hostAddress")
+    private final String hostAddress;
+
+    @JsonProperty("hostDate")
+    private final String hostDate;
 
     @JsonCreator
-    public QueueService(@JsonProperty("serverInfo") final String serverinfoInput) {
-        this.serverInfo = serverinfoInput;
+    QueueService(final String hostNm, final String hostAddr) {
+        this.hostName = hostNm;
+        this.hostAddress = hostAddr;
+        this.hostDate = new Date().toString();
     }
 
-    public String getServerInfo() {
-        return this.serverInfo;
+    public String getHostName() {
+        return this.hostName;
+    }
+
+    public String getHostAddress() {
+        return hostAddress;
+    }
+
+    public String getHostDate() {
+        return hostDate;
     }
 }

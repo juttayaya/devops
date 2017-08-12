@@ -19,18 +19,29 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 public class QueueServiceController {
     @RequestMapping("/queue")
     public HttpEntity<QueueService> queue() {
-        final String hostname = findHostname();
-        final QueueService queueService = new QueueService(hostname);
+        final String hostName = findHostName();
+        final String hostAddr = findHostAddress();
+        
+        final QueueService queueService = new QueueService(hostName,hostAddr);
         queueService.add(linkTo(methodOn(QueueServiceController.class).queue()).withSelfRel());
 
         return new ResponseEntity<>(queueService, HttpStatus.OK);
     }
 
-    private String findHostname() {
+    private String findHostName() {
         try {
             return InetAddress.getLocalHost().getHostName();
         } catch (UnknownHostException e) {
             return "UNKNOWN: " + e.getMessage();
         }
     }
+
+    private String findHostAddress() {
+        try {
+            return InetAddress.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            return "UNKNOWN: " + e.getMessage();
+        }
+    }
+
 }
