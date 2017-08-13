@@ -3,7 +3,7 @@ terraform {
     bucket = "jirawat-kubectl-io-terraform-state"
     region = "us-east-2"
     key = "global/dynamodb/terraform.tfstate"
-#    dynamodb_table = "terraform-netflix-oss-lock"
+    dynamodb_table = "jirawat-kubectl-io-terraform-lock"
     encrypt = true
   }
 }
