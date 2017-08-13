@@ -10,3 +10,12 @@ buildNumber.properties
 terraform.tfstate
 terraform.tfstate.backup
 .terraform/
+.idea/
+*.iml
+*.tar.gz
+*.war
+*.zip
+*-packer-manifest.json
+kubernetes-aws/awscli/keypair/k8s-keypair.out
+kubernetes-aws/packer/repo/kops-linux-amd64
+kubernetes-aws/packer/repo/kubectl
