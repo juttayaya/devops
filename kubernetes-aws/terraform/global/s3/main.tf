@@ -1,12 +1,12 @@
-#terraform {
-#  backend "s3" {
-#    bucket = "terraform-netflix-oss-tfstate"
-#    region = "us-east-2"
-#    key = "global/s3/terraform.tfstate"
-#    dynamodb_table = "terraform-netflix-oss-lock"
-#    encrypt = true
-#  }
-#}
+terraform {
+  backend "s3" {
+    bucket = "jirawat-kubectl-io-terraform-state"
+    region = "us-east-2"
+    key = "global/s3/terraform.tfstate"
+    dynamodb_table = "jirawat-kubectl-io-terraform-lock"
+    encrypt = true
+  }
+}
 
 provider "aws" {
   region = "us-east-2"
