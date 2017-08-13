@@ -34,7 +34,8 @@
     ],
     "tags": {
       "Name": "Eureka Server AMI",
-      "Org": "jirawat.com"
+      "Org": "jirawat.com",
+      "Project": "Netflix OSS"
     }
   }],
   "provisioners": [
