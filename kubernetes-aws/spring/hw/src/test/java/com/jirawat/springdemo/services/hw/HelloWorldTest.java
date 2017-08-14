@@ -20,6 +20,7 @@ public class HelloWorldTest {
         final HelloWorld helloWorld = new HelloWorld();
 
         final String hostAddress = helloWorld.getHostAddress();
+        assertThat("Msg must be 'Hello World'", helloWorld.getMsg(), is("Hello World"));
         assertThat("Host Address must be a valid IP",
           IPV4_PATTERN.matcher(hostAddress).matches(), is(true));
         assertThat("Host Name must be populated", helloWorld.getHostName(), notNullValue());

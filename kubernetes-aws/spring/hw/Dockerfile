@@ -2,6 +2,9 @@
 # Alpine is a lightweight Uniz that is under 5 MB in size
 FROM openjdk:8u131-jdk-alpine
 
+# Who did this?
+MAINTAINER Jirawat Uttayaya <jirawat@apps.jirawat.com>
+
 # Spring Boot uses /tmp for Tomcat.
 VOLUME /tmp
 

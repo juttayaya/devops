@@ -12,6 +12,9 @@ import java.util.Date;
  * @author juttayaya
  */
 class HelloWorld extends ResourceSupport {
+    @JsonProperty("msg")
+    private final String msg;
+
     @JsonProperty("hostName")
     private final String hostName;
 
@@ -23,6 +26,7 @@ class HelloWorld extends ResourceSupport {
 
     @JsonCreator
     HelloWorld() {
+        this.msg = "Hello World";
         this.hostName = findHostName();
         this.hostAddress = findHostAddress();
         this.hostDate = new Date().toString();
@@ -42,6 +46,10 @@ class HelloWorld extends ResourceSupport {
         } catch (UnknownHostException e) {
             return "UNKNOWN: " + e.getMessage();
         }
+    }
+
+    String getMsg() {
+        return msg;
     }
 
     String getHostName() {
