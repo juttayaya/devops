@@ -1,4 +1,4 @@
-package com.jirawat.springdemo.services;
+package com.jirawat.springdemo.services.hw;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -44,4 +44,15 @@ class HelloWorld extends ResourceSupport {
         }
     }
 
+    String getHostName() {
+        return this.hostName;
+    }
+
+    String getHostAddress() {
+        return this.hostAddress;
+    }
+
+    String getHostDate() {
+        return this.hostDate;
+    }
 }
