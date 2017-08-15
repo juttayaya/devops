@@ -50,6 +50,11 @@ docker rmi image_id
 
 Kubernetes
 KOPS on AWS
+Kubernetes UI : kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+https://api.jirawat.kubectl.io/ui/
+See user:pass with 
+kubectl config view
+
 
 kubectl create -f k8s-helloworld-deployment.yml
 kubectl describe deployment k8s-helloworld-deployment
@@ -57,3 +62,7 @@ kubectl get pods -l app=k8s-helloworld
 kubectl describe pod <pod_id>
 kubectl delete deployment k8s-helloworld-deployment
 
+LoadBalancer
+kubectl get replicasets -l app=k8s-helloworld
+kubectl expose rs k8s-helloworld-deployment-4904980 --type="LoadBalancer" --name="k8s-helloworld-service"
+kubectl get services k8s-helloworld-service -o wide
