@@ -64,5 +64,5 @@ kubectl delete deployment k8s-helloworld-deployment
 
 LoadBalancer
 kubectl get replicasets -l app=k8s-helloworld
-kubectl expose rs k8s-helloworld-deployment-4904980 --type="LoadBalancer" --name="k8s-helloworld-service"
+kubectl expose rs k8s-helloworld-deployment-4904980 --type="LoadBalancer" --name="k8s-helloworld-service" --port=80 --target-port=8080
 kubectl get services k8s-helloworld-service -o wide
