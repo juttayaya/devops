@@ -47,3 +47,13 @@ Clean images
 docker system prune
 docker images
 docker rmi image_id
+
+Kubernetes
+KOPS on AWS
+
+kubectl create -f k8s-helloworld-deployment.yml
+kubectl describe deployment k8s-helloworld-deployment
+kubectl get pods -l app=k8s-helloworld
+kubectl describe pod <pod_id>
+kubectl delete deployment k8s-helloworld-deployment
+

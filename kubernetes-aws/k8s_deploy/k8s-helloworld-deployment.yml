@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-helloworld-deployment
+spec:
+  replicas: 3 # tells deployment to run 3 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: k8s-helloworld
+    spec:
+      containers:
+      - name: k8s-helloworld
+        image: juttayaya/k8s-helloworld:0.1.0-SNAPSHOT
+        ports:
+        - containerPort: 8080
