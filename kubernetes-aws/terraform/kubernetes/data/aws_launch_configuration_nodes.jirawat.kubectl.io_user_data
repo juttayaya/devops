@@ -133,6 +133,7 @@ InstanceGroupName: nodes
 Tags:
 - _automatic_upgrades
 - _aws
+- _networking_cni
 channels:
 - s3://jirawat-kubectl-io-state-store/jirawat.kubectl.io/addons/bootstrap-channel.yaml
 protokubeImage:

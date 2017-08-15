@@ -129,7 +129,7 @@ Assets:
 - 5d95d64d7134f202ba60b1fa14adaff138905d15@https://kubeupv2.s3.amazonaws.com/kops/1.7.0/linux/amd64/utils.tar.gz
 ClusterName: jirawat.kubectl.io
 ConfigBase: s3://jirawat-kubectl-io-state-store/jirawat.kubectl.io
-InstanceGroupName: master-us-east-2a
+InstanceGroupName: master-us-east-2c
 Tags:
 - _automatic_upgrades
 - _aws
