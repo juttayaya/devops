@@ -1,0 +1,5 @@
+ssh-add ~/.ssh/id_rsa
+ssh-add -L
+ssh -A admin@bastion.jirawat.kubectl.io
+ssh admin@<k8s_internal_ip>
+
