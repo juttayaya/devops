@@ -1,4 +1,7 @@
-Lots to cover. Some of these concepts may be new to you. That's OK. THink of this as a big picture overview of the main ideas. We can get into the details during the hands-on portion of the presentation. There will be additional help at the end of the day.
+Lots to cover. Some of these concepts may be new to you. That's OK. 
+THink of this as a big picture overview of the main ideas. 
+We can get into the details during the hands-on portion of the presentation. 
+There will be additional help at the end of the day.
 
 Spring Boot + Docker + k8s
 The main concentration will be k8s. Will go through Spring Boot and Docker fairly quick
