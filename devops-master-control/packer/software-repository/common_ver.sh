@@ -1,0 +1,15 @@
+#!/bin/bash
+
+TERRAFORM_VER="0.10.3"
+TERRAFORM_ZIP="terraform_${TERRAFORM_VER}_linux_amd64.zip"
+PACKER_VER="1.0.4"
+PACKER_ZIP="packer_${PACKER_VER}_linux_amd64.zip"
+KUBECTL_VER=v1.7.5
+KUBECTL="kubectl"
+KUBECTL_BIN="${KUBECTL}_${KUBECTL_VER}"
+KOPS_VER="1.7.0"
+KOPS="kops-linux-amd64"
+KOPS_BIN="${KOPS}_${KOPS_VER}"
+ANSIBLE_VER="2.3"
+ANSIBLE="ansible-stable-${ANSIBLE_VER}"
+ANSIBLE_ZIP="${ANSIBLE}.zip"
