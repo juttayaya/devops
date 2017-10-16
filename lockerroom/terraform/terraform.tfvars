@@ -1,0 +1,5 @@
+envname="pb-ci-510"
+payor00_ip="10.12.124.27"
+payor01_ip="10.12.124.24"
+connector01_ip="10.12.124.28"
+oracle01_ip="10.12.124.26"
