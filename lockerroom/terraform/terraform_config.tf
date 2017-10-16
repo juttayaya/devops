@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "healthedge-terraform-state-us-east-2"
+    bucket = "jirawat-terraform-state-us-east-2"
     region = "us-east-2"
-    key = "jenkins/pb-ci-510/terraform.tfstate"
+    key = "lockerroom/terraform.tfstate"
     dynamodb_table = "terraform_lock"
     encrypt = "true"
   }
