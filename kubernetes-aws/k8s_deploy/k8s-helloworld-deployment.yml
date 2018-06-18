@@ -1,16 +1,33 @@
-apiVersion: apps/v1beta1
+kind: Service
+metadata:
+  name: juttayaya-helloworld-service
+  labels:
+    run: juttayaya-helloworld-service
+spec:
+  type: NodePort
+  ports:
+  - port: 7000
+    targetPort: 8081
+    protocol: TCP
+  selector:
+    run: juttayaya-helloworld-app
+---
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-helloworld-deployment
+  name: juttayaya-helloworld-deployment
 spec:
+  selector:
+    matchLabels:
+      run: juttayaya-helloworld-app
   replicas: 3 # tells deployment to run 3 pods matching the template
   template: # create pods using pod definition in this template
     metadata:
       labels:
-        app: k8s-helloworld
+        run: juttayaya-helloworld-app
     spec:
       containers:
-      - name: k8s-helloworld
-        image: juttayaya/k8s-helloworld:0.1.0-SNAPSHOT
+      - name: juttayaya-helloworld-app
+        image: he1-nexus-pr01.headquarters.healthedge.com:9083/juttayaya/k8s-helloworld:0.1.0-SNAPSHOT
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
