@@ -28,6 +28,6 @@ spec:
     spec:
       containers:
       - name: juttayaya-helloworld-app
-        image: he1-nexus-pr01.headquarters.healthedge.com:9083/juttayaya/k8s-helloworld:0.1.0-SNAPSHOT
+        image: internal-docker-repo.com:9083/juttayaya/k8s-helloworld:0.1.0-SNAPSHOT
         ports:
         - containerPort: 8081
