@@ -6,8 +6,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 7000
-    targetPort: 8081
+  - port: 8080
+    nodePort: 30001
     protocol: TCP
   selector:
     run: juttayaya-helloworld-app
@@ -30,4 +30,4 @@ spec:
       - name: juttayaya-helloworld-app
         image: internal-docker-repo.com:9083/juttayaya/k8s-helloworld:0.1.0-SNAPSHOT
         ports:
-        - containerPort: 8081
+        - containerPort: 8080
