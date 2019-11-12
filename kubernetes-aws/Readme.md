@@ -55,9 +55,12 @@ Locally image stored at
 ### Kubernetes
 KOPS on AWS
 * Kubernetes UI : kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
-https://api.jirawat.kubectl.io/ui/
-See user:pass with 
-kubectl config view
+
+UI URL: https://api.jirawat.kubectl.io/ui/
+
+See UI user:pass with
+
+_kubectl config view_
 
 
 * kubectl create -f k8s-helloworld-deployment.yml
