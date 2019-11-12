@@ -20,9 +20,9 @@ https://martinfowler.com/articles/richardsonMaturityModel.html
 
 ### Spring HATEOAS and Spring Actuator
 Spring Actuator automatically provides production support for REST
-mvn clean install
-java -jar target/helloworld-0.1.0-SNAPSHOT.jar
- (mvn spring-boot:run)
+* mvn clean install
+* java -jar target/helloworld-0.1.0-SNAPSHOT.jar
+* (mvn spring-boot:run)
 http://localhost:8080/actuator
 
 
@@ -54,20 +54,20 @@ Locally image stored at
 
 ### Kubernetes
 KOPS on AWS
-Kubernetes UI : kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+* Kubernetes UI : kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
 https://api.jirawat.kubectl.io/ui/
 See user:pass with 
 kubectl config view
 
 
-kubectl create -f k8s-helloworld-deployment.yml
-kubectl describe deployment k8s-helloworld-deployment
-kubectl rollout status deployment juttayaya-helloworld-deployment
-kubectl get pods -l app=k8s-helloworld
-kubectl describe pod <pod_id>
-kubectl delete deployment k8s-helloworld-deployment
+* kubectl create -f k8s-helloworld-deployment.yml
+* kubectl describe deployment k8s-helloworld-deployment
+* kubectl rollout status deployment juttayaya-helloworld-deployment
+* kubectl get pods -l app=k8s-helloworld
+* kubectl describe pod <pod_id>
+* kubectl delete deployment k8s-helloworld-deployment
 
-LoadBalancer
-kubectl get replicasets -l app=k8s-helloworld
-kubectl expose rs k8s-helloworld-deployment-4904980 --type="LoadBalancer" --name="k8s-helloworld-service" --port=80 --target-port=8080
-kubectl get services k8s-helloworld-service -o wide
+#### LoadBalancer
+* kubectl get replicasets -l app=k8s-helloworld
+* kubectl expose rs k8s-helloworld-deployment-4904980 --type="LoadBalancer" --name="k8s-helloworld-service" --port=80 --target-port=8080
+* kubectl get services k8s-helloworld-service -o wide
