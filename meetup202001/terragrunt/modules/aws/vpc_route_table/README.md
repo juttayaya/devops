@@ -1,0 +1,1 @@
+Create VPC external route table
