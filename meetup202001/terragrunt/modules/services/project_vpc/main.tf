@@ -23,9 +23,9 @@ module "subnet_external_a" {
   project = var.project
 }
 
-module "subnet_external_a" {
+module "subnet_external_b" {
   source            = "../../aws/subnet"
-  subnet_name       = "${local.project_full_prefix}-external-a"
+  subnet_name       = "${local.project_full_prefix}-external-b"
   cidr_block        = "${var.cidr_block_host_octets}.2.0/24"
   availability_zone = "${var.region}b"
   is_external       = true
