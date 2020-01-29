@@ -6,7 +6,7 @@ terraform {
   backend "s3" {
     bucket         = "jirawat-devops202001-terraform-tfstate"
     region         = "us-east-1"
-    key            = "environments/dev/project_vpc/terraform.tfstate"
+    key            = "environments/dev/project_security_groups/terraform.tfstate"
     encrypt        = true
     dynamodb_table = "jirawat-devops202001-terraform-tflock"
   }
