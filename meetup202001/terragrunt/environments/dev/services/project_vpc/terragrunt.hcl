@@ -9,5 +9,5 @@ terraform {
 }
 
 inputs = {
-  cidr_block_host_octets = "172.30"
+  cidr_block_host_octets = "172.50"
 }
