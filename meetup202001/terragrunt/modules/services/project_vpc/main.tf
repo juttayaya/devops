@@ -48,7 +48,7 @@ module "subnet_internal_a" {
 module "subnet_internal_b" {
   source            = "../../aws/subnet"
   subnet_name       = "${local.project_full_prefix}-internal-b"
-  cidr_block        = "${var.cidr_block_host_octets}.10.0/24"
+  cidr_block        = "${var.cidr_block_host_octets}.20.0/24"
   availability_zone = "${var.region}b"
   is_external       = true
   vpc_id            = module.project_vpc.id
