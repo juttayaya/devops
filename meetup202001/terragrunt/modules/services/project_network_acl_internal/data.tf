@@ -11,7 +11,7 @@ data "aws_subnet_ids" "subnets_internal" {
   tags = {
     project     = var.project
     environment = var.environment
-    subnet_type = "internal"
+    subnet-type = "internal"
   }
 }
 
@@ -21,7 +21,7 @@ data "aws_subnet" "subnet_external_a" {
     Name        = "${local.project_full_prefix}-external-a"
     project     = var.project
     environment = var.environment
-    subnet_type = "external"
+    subnet-type = "external"
   }
 }
 
@@ -31,6 +31,6 @@ data "aws_subnet" "subnet_external_b" {
     Name        = "${local.project_full_prefix}-external-b"
     project     = var.project
     environment = var.environment
-    subnet_type = "external"
+    subnet-type = "external"
   }
 }
