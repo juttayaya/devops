@@ -1,1 +1,1 @@
-Create CMT VPC subnet
+Create VPC subnet
