@@ -1,0 +1,5 @@
+environment            = "prod"
+project                = "jirawat-devops202001-terraform"
+region                 = "us-west-1"
+aws_account_id         = "278946338358"
+cidr_block_host_octets = "172.42"
