@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # deleteBefore=`date --date="1 week ago" +%F`
+# (echo -n '{"Objects":';aws s3api list-object-versions --bucket "$bucket" --prefix "$prefix" --max-items 1000 --query "Versions[?(LastModified<'2020-07-21')].{Key: Key, VersionId: VersionId}" | sed 's#]$#] , "Quiet":true}#') > _TMP_DELETE && aws s3api delete-objects --bucket "$bucket" --delete file://_TMP_DELETE
 bucket=$1
 # fileToDelete=$2
 fileName='/tmp/aws_delete.json'
@@ -13,4 +14,4 @@ cat << EOF > $fileName
 EOF
 aws s3api delete-objects --bucket "$bucket" --delete file://$fileName
 # s3api delete-objects can handle upto 1000 records
-echo "Delete successsful"
+echo "Delete successful"
